@@ -1,0 +1,19 @@
+.submit{
+    margin: 0;
+    padding-top: 20px;
+}
+:focus::-webkit-input-placeholder {
+    color: transparent
+  }
+  
+  :focus::-moz-placeholder {
+    color: transparent
+  }
+  
+  :focus:-moz-placeholder {
+    color: transparent
+  }
+  
+  :focus:-ms-input-placeholder {
+    color: transparent
+  }

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <script>
+      function numberButton() {
+        if( isNaN(document.getElementById('sotrNumber').value) ){
+          alert("введите число!")
+        }
+      }
+      function changeMenuId(obj) {
+        let confirmMenu = document.getElementById('bitok12');
+        confirmMenu.setAttribute('data-butt', obj.id);
+      }
+
+      function HideLine(obj) {
+        let id = 't' + obj.getAttribute('data-butt');
+        let tableTr = document.getElementById(id);
+        tableTr.hidden = true;
+      }
+
+      function createSotr(){
+        let surname = document.getElementById('surname').value;
+        localStorage.setItem('sotrSurname', surname);
+        window.location.href = 'secondIndex.html';
+      }
+    </script>
+    <div class="container">
+
+        <div class="submit">
+            <form class="row g-3">
+                <div class="col-auto">
+                  <label for="inputPassword2" class="visually-hidden">Номер</label>
+                  <input type="" class="" id="sotrNumber" placeholder="Номер сотрудника">
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-primary mb-3" onclick="numberButton()">Найти</button>
+                </div>
+                <div class="col-auto">
+                  <label for="inputPassword2" class="visually-hidden">Имя</label>
+                  <input type="" class="form-control" id="inputPassword2" placeholder="Имя сотрудника">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-3">Найти</button>
+                </div>
+                <div class="col-auto">
+                  <input type="" class="form-control" id="surname" placeholder="фамилия сотрудника">
+                </div>
+                <div class="col-auto">
+                  <button type="button" class="btn btn-success mb-3" onclick="createSotr()" >Создать сотрудника</button>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-success mb-3">Показать всех сотрудников</button>
+                </div>
+              </form>
+        </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">номер сотрудника</th>
+                <th scope="col">имя сотрудника</th>
+                <th scope="col">должность сотрудника</th>
+                <th scope="col">дата принятия на работу</th>
+                <th scope="col">департамент</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="t1" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>1</th>
+                <td>Жмыха</td>
+                <td>Лучик</td>
+                <td>02.03.2023</td>
+                <td>Рабочий</td>
+                <th><a id="1" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t2" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>2</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="2" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t3" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>3</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="3" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t4" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>4</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="4" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t5" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>5</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="5" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t6" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>6</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="6" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t7" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>7</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="7" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t8" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>8</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="8" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t9" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>9</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="9" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+              <tr id="t10" >
+                <th scope="row"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                <th>10</th>
+                <td>Игорь</td>
+                <td>Кочерыга</td>
+                <td>02.03.2023</td>
+                <td>АГУАГЫАГА</td>
+                <th><a id="10" href="" class="text-danger" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeMenuId(this)">удалить</a></th>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Удалить этого сотрудника?
+          </div>
+          <div class="modal-footer">
+            <button id="bitok12" type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-butt="0" onclick="HideLine(this)">Удалить</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
